@@ -23,6 +23,7 @@ const ListingsGrid = ({ listings }: ListingsGridProps) => {
           key={listing.id}
           title={listing.title}
           location={listing.location}
+          imageUrl={listing.imageUrl}
         />
       ))}
     </div>
