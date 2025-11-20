@@ -13,7 +13,7 @@ export const mockListings: Listing[] = [
     title: "Alpine Sauna Retreat",
     location: "Innsbruck, Austria",
     description: "Small mountain cabin with panoramic views and a private sauna.",
-    imageUrl: "/assets/alpine_lake.jpg",
+    imageUrl: "/assets/skandinavian_snowy.jpg",
     tags: ["sauna", "withAView", "wifi"],
   },
   {
@@ -93,7 +93,7 @@ export const mockListings: Listing[] = [
     title: "Desert Adobe Hideout",
     location: "Sedona, USA",
     description: "Quiet adobe-style home with open light and peaceful surroundings.",
-    imageUrl: "/assets/beach_bungalow.png",
+    imageUrl: "/assets/desert_hideout.jpg",
     tags: ["allergyFriendly", "wifi"],
   },
   {
@@ -141,7 +141,7 @@ export const mockListings: Listing[] = [
     title: "Cozy Snowfield Cottage",
     location: "Quebec, Canada",
     description: "Winter cottage with fireplace and snow trail access.",
-    imageUrl: "/assets/cabin_forest.png",
+    imageUrl: "/assets/skandinavian_snowy.jpg",
     tags: ["familyFriendly", "wifi", "petFriendly"],
   },
   {
