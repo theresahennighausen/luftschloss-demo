@@ -1,8 +1,8 @@
-import { Search } from "lucide-react";
+import { Search, Plus } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import FilterPanel from "./FilterPanel";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 
 interface SearchBarProps {
   location: string;
@@ -31,7 +31,28 @@ const SearchBar = ({
   onFilterChange,
   onSearch,
 }: SearchBarProps) => {
-  const [isFilterOpen, setIsFilterOpen] = useState(true);
+  const [isFilterOpen, setIsFilterOpen] = useState(false);
+  const filterPanelRef = useRef<HTMLDivElement>(null);
+  const filterButtonRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        isFilterOpen &&
+        filterPanelRef.current &&
+        filterButtonRef.current &&
+        !filterPanelRef.current.contains(event.target as Node) &&
+        !filterButtonRef.current.contains(event.target as Node)
+      ) {
+        setIsFilterOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isFilterOpen]);
 
   return (
     <div className="relative w-full max-w-5xl mx-auto">
@@ -46,7 +67,7 @@ const SearchBar = ({
             placeholder="Search destinations"
             value={location}
             onChange={(e) => onLocationChange(e.target.value)}
-            className="border-0 p-0 h-auto focus-visible:ring-0 focus-visible:ring-offset-0 placeholder:text-muted-foreground text-sm"
+            className="border-0 p-0 h-7 leading-7 focus-visible:ring-0 focus-visible:ring-offset-0 placeholder:text-muted-foreground text-sm flex items-center"
           />
         </div>
 
@@ -60,7 +81,7 @@ const SearchBar = ({
             placeholder="Add date"
             value={checkIn}
             onChange={(e) => onCheckInChange(e.target.value)}
-            className="border-0 p-0 h-auto focus-visible:ring-0 focus-visible:ring-offset-0 placeholder:text-muted-foreground text-sm"
+            className="border-0 p-0 h-7 leading-7 focus-visible:ring-0 focus-visible:ring-offset-0 placeholder:text-muted-foreground text-sm flex items-center"
           />
         </div>
 
@@ -74,7 +95,7 @@ const SearchBar = ({
             placeholder="Add date"
             value={checkOut}
             onChange={(e) => onCheckOutChange(e.target.value)}
-            className="border-0 p-0 h-auto focus-visible:ring-0 focus-visible:ring-offset-0 placeholder:text-muted-foreground text-sm"
+            className="border-0 p-0 h-7 leading-7 focus-visible:ring-0 focus-visible:ring-offset-0 placeholder:text-muted-foreground text-sm flex items-center"
           />
         </div>
 
@@ -88,7 +109,7 @@ const SearchBar = ({
             placeholder="Add guests"
             value={guests}
             onChange={(e) => onGuestsChange(e.target.value)}
-            className="border-0 p-0 h-auto focus-visible:ring-0 focus-visible:ring-offset-0 placeholder:text-muted-foreground text-sm"
+            className="border-0 p-0 h-7 leading-7 focus-visible:ring-0 focus-visible:ring-offset-0 placeholder:text-muted-foreground text-sm flex items-center"
           />
         </div>
 
@@ -98,19 +119,20 @@ const SearchBar = ({
             Other filters
           </label>
           <button
+            ref={filterButtonRef}
             onClick={() => setIsFilterOpen(!isFilterOpen)}
-            className="text-sm text-muted-foreground hover:text-foreground transition-colors w-full text-left"
+            className="h-7 px-3 rounded-full bg-transparent border-0 text-sm text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1.5"
           >
-            <span className="flex items-center gap-1">
-              <input type="checkbox" className="mr-1" readOnly checked={isFilterOpen} />
-              Choose
-            </span>
+            <Plus className="w-3.5 h-3.5" />
+            <span>Choose more</span>
           </button>
-          <FilterPanel
-            isOpen={isFilterOpen}
-            selectedFilters={selectedFilters}
-            onFilterChange={onFilterChange}
-          />
+          <div ref={filterPanelRef}>
+            <FilterPanel
+              isOpen={isFilterOpen}
+              selectedFilters={selectedFilters}
+              onFilterChange={onFilterChange}
+            />
+          </div>
         </div>
 
         {/* Search button */}
