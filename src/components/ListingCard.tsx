@@ -6,7 +6,7 @@ interface ListingCardProps {
 
 const ListingCard = ({ title, location, imageUrl }: ListingCardProps) => {
   return (
-    <div className="bg-white/80 backdrop-blur-sm rounded-2xl overflow-hidden shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-pointer">
+    <div className="bg-white/80 backdrop-blur-sm rounded-2xl overflow-hidden shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
       <div className="aspect-square relative overflow-hidden">
         <img 
           src={imageUrl} 

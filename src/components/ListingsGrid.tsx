@@ -1,5 +1,6 @@
 import { Listing } from "@/data/mockListings";
 import ListingCard from "./ListingCard";
+import { Link } from "react-router-dom";
 
 interface ListingsGridProps {
   listings: Listing[];
@@ -19,12 +20,13 @@ const ListingsGrid = ({ listings }: ListingsGridProps) => {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-6">
       {listings.map((listing) => (
-        <ListingCard
-          key={listing.id}
-          title={listing.title}
-          location={listing.location}
-          imageUrl={listing.imageUrl}
-        />
+        <Link key={listing.id} to={`/listing/${listing.id}`}>
+          <ListingCard
+            title={listing.title}
+            location={listing.location}
+            imageUrl={listing.imageUrl}
+          />
+        </Link>
       ))}
     </div>
   );
