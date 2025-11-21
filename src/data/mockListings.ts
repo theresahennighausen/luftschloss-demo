@@ -21,7 +21,7 @@ export const mockListings: Listing[] = [
     title: "Seaside Cabin Escape",
     location: "Ålesund, Norway",
     description: "Cozy waterfront wood cabin, perfect for walks with pets.",
-    imageUrl: "/assets/cabin_forest.png",
+    imageUrl: "/assets/seaside_cabin_norway.png",
     tags: ["withAView", "wifi", "petFriendly"],
   },
   {
@@ -61,7 +61,7 @@ export const mockListings: Listing[] = [
     title: "Forest Edge Cottage",
     location: "Black Forest, Germany",
     description: "Traditional cottage with allergy-friendly renovation and a large garden.",
-    imageUrl: "/assets/cabin_forest.png",
+    imageUrl: "/assets/black_forest_germany.png",
     tags: ["familyFriendly", "allergyFriendly", "wifi"],
   },
   {
@@ -77,7 +77,7 @@ export const mockListings: Listing[] = [
     title: "Cliffside Glass Studio",
     location: "Santorini, Greece",
     description: "Glass-front studio with sweeping sea sunset views.",
-    imageUrl: "/assets/beach_front.png",
+    imageUrl: "/assets/cliffside_glass_house.png",
     tags: ["withAView", "wifi"],
   },
   {
@@ -85,7 +85,7 @@ export const mockListings: Listing[] = [
     title: "Riverside Farmhouse",
     location: "Vermont, USA",
     description: "Rustic farmhouse with a riverside garden and fire pit.",
-    imageUrl: "/assets/cabin_forest.png",
+    imageUrl: "/assets/farmhouse_vermont.png",
     tags: ["familyFriendly", "petFriendly", "wifi"],
   },
   {
@@ -101,7 +101,7 @@ export const mockListings: Listing[] = [
     title: "Nordic Minimalist Loft",
     location: "Copenhagen, Denmark",
     description: "Minimalist loft with large windows and allergy-friendly materials.",
-    imageUrl: "/assets/indoor_pool_with_view.jpg",
+    imageUrl: "/assets/nordic_loft_denmark.png",
     tags: ["wifi", "allergyFriendly"],
   },
   {
@@ -157,7 +157,7 @@ export const mockListings: Listing[] = [
     title: "Summer Garden Villa",
     location: "Tuscany, Italy",
     description: "Tuscan villa with large garden, pool, and family space.",
-    imageUrl: "/assets/beach_bungalow.png",
+    imageUrl: "/assets/villa_tuscany.png",
     tags: ["pool", "wifi", "familyFriendly"],
   },
   {
