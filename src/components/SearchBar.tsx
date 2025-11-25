@@ -77,7 +77,7 @@ const SearchBar = ({
             Check-in
           </label>
           <Input
-            type="date"
+            type="text"
             placeholder="Select date"
             value={checkIn}
             onChange={(e) => onCheckInChange(e.target.value)}
@@ -91,8 +91,8 @@ const SearchBar = ({
             Check-out
           </label>
           <Input
-            type="date"
-            placeholder="Add date"
+            type="text"
+            placeholder="Select date"
             value={checkOut}
             onChange={(e) => onCheckOutChange(e.target.value)}
             className="border-0 p-0 h-8 leading-8 ml-2 focus-visible:ring-0 focus-visible:ring-offset-0 placeholder:text-muted-foreground/70 text-sm font-medium text-foreground/90 flex items-center bg-transparent"
