@@ -58,8 +58,8 @@ const SearchBar = ({
     <div className="relative w-full max-w-5xl mx-auto">
       <div className="bg-white rounded-full shadow-xl p-2 flex flex-wrap md:flex-nowrap items-center gap-2 md:gap-0">
         {/* Where to? */}
-        <div className="flex-1 min-w-[140px] px-4 py-2 border-r border-border">
-          <label className="block text-xs font-semibold text-foreground mb-1">
+        <div className="flex-1 min-w-[160px] px-2 py-2 border-r border-border/40">
+          <label className="block text-xs font-semibold text-foreground mb-1.5 ml-2">
             Where to?
           </label>
           <Input
@@ -67,27 +67,27 @@ const SearchBar = ({
             placeholder="Search destinations"
             value={location}
             onChange={(e) => onLocationChange(e.target.value)}
-            className="border-0 p-0 h-7 leading-7 focus-visible:ring-0 focus-visible:ring-offset-0 placeholder:text-muted-foreground text-sm flex items-center"
+            className="border-0 p-0 h-8 leading-8 ml-2 focus-visible:ring-0 focus-visible:ring-offset-0 placeholder:text-muted-foreground/70 text-sm font-medium text-foreground/90 flex items-center bg-transparent"
           />
         </div>
 
         {/* Check-in */}
-        <div className="flex-1 min-w-[120px] px-4 py-2 border-r border-border">
-          <label className="block text-xs font-semibold text-foreground mb-1">
+        <div className="flex-1 min-w-[160px] px-2 py-2 border-r border-border/40">
+          <label className="block text-xs font-semibold text-foreground mb-1.5 ml-2">
             Check-in
           </label>
           <Input
             type="date"
-            placeholder="Add date"
+            placeholder="Select date"
             value={checkIn}
             onChange={(e) => onCheckInChange(e.target.value)}
-            className="border-0 p-0 h-7 leading-7 focus-visible:ring-0 focus-visible:ring-offset-0 placeholder:text-muted-foreground text-sm flex items-center"
+            className="border-0 p-0 h-8 leading-8 ml-2 focus-visible:ring-0 focus-visible:ring-offset-0 placeholder:text-muted-foreground/70 text-sm font-medium text-foreground/90 flex items-center bg-transparent"
           />
         </div>
 
         {/* Check-out */}
-        <div className="flex-1 min-w-[120px] px-4 py-2 border-r border-border">
-          <label className="block text-xs font-semibold text-foreground mb-1">
+        <div className="flex-1 min-w-[160px] px-2 py-2 border-r border-border/40">
+          <label className="block text-xs font-semibold text-foreground mb-1.5 ml-2">
             Check-out
           </label>
           <Input
@@ -95,13 +95,13 @@ const SearchBar = ({
             placeholder="Add date"
             value={checkOut}
             onChange={(e) => onCheckOutChange(e.target.value)}
-            className="border-0 p-0 h-7 leading-7 focus-visible:ring-0 focus-visible:ring-offset-0 placeholder:text-muted-foreground text-sm flex items-center"
+            className="border-0 p-0 h-8 leading-8 ml-2 focus-visible:ring-0 focus-visible:ring-offset-0 placeholder:text-muted-foreground/70 text-sm font-medium text-foreground/90 flex items-center bg-transparent"
           />
         </div>
 
         {/* Who? */}
-        <div className="flex-1 min-w-[100px] px-4 py-2 border-r border-border">
-          <label className="block text-xs font-semibold text-foreground mb-1">
+        <div className="flex-1 min-w-[160px] px-2 py-2 border-r border-border/40">
+          <label className="block text-xs font-semibold text-foreground mb-1.5 ml-2">
             Who?
           </label>
           <Input
@@ -109,19 +109,19 @@ const SearchBar = ({
             placeholder="Add guests"
             value={guests}
             onChange={(e) => onGuestsChange(e.target.value)}
-            className="border-0 p-0 h-7 leading-7 focus-visible:ring-0 focus-visible:ring-offset-0 placeholder:text-muted-foreground text-sm flex items-center"
+            className="border-0 p-0 h-8 leading-8 ml-2 focus-visible:ring-0 focus-visible:ring-offset-0 placeholder:text-muted-foreground/70 text-sm font-medium text-foreground/90 flex items-center bg-transparent"
           />
         </div>
 
         {/* Other filters */}
-        <div className="relative flex-1 min-w-[120px] px-4 py-2">
-          <label className="block text-xs font-semibold text-foreground mb-1">
+        <div className="relative flex-1 min-w-[160px] px-2 py-2">
+          <label className="block text-xs font-semibold text-foreground mb-1.5 ml-2">
             Other filters
           </label>
           <button
             ref={filterButtonRef}
             onClick={() => setIsFilterOpen(!isFilterOpen)}
-            className="h-7 px-3 rounded-full bg-transparent border-0 text-sm text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1.5"
+            className="h-8 px-3 ml-2 rounded-full bg-transparent border-0 text-sm font-medium text-muted-foreground/70 hover:text-foreground transition-colors flex items-center gap-1.5"
           >
             <Plus className="w-3.5 h-3.5" />
             <span>Choose more</span>
