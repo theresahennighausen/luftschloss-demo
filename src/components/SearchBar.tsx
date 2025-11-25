@@ -2,6 +2,7 @@ import { Search, Plus } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import FilterPanel from "./FilterPanel";
+import DateField from "./DateField";
 import { useState, useEffect, useRef } from "react";
 
 interface SearchBarProps {
@@ -76,12 +77,10 @@ const SearchBar = ({
           <label className="block text-xs font-semibold text-foreground mb-1.5 ml-2">
             Check-in
           </label>
-          <Input
-            type="text"
-            placeholder="Select date"
+          <DateField
             value={checkIn}
-            onChange={(e) => onCheckInChange(e.target.value)}
-            className="border-0 p-0 h-8 leading-8 ml-2 focus-visible:ring-0 focus-visible:ring-offset-0 placeholder:text-muted-foreground/70 text-sm font-medium text-foreground/90 flex items-center bg-transparent"
+            onChange={onCheckInChange}
+            placeholder="Select date"
           />
         </div>
 
@@ -90,12 +89,10 @@ const SearchBar = ({
           <label className="block text-xs font-semibold text-foreground mb-1.5 ml-2">
             Check-out
           </label>
-          <Input
-            type="text"
-            placeholder="Select date"
+          <DateField
             value={checkOut}
-            onChange={(e) => onCheckOutChange(e.target.value)}
-            className="border-0 p-0 h-8 leading-8 ml-2 focus-visible:ring-0 focus-visible:ring-offset-0 placeholder:text-muted-foreground/70 text-sm font-medium text-foreground/90 flex items-center bg-transparent"
+            onChange={onCheckOutChange}
+            placeholder="Select date"
           />
         </div>
 
