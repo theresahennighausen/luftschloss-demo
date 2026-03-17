@@ -22,6 +22,7 @@ const ListingsGrid = ({ listings }: ListingsGridProps) => {
       {listings.map((listing) => (
         <Link key={listing.id} to={`/listing/${listing.id}`}>
           <ListingCard
+            id={listing.id}
             title={listing.title}
             location={listing.location}
             imageUrl={listing.imageUrl}
