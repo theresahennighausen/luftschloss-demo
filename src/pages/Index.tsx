@@ -43,11 +43,18 @@ const Index = () => {
       <CloudDecoration />
       
       <div className="relative z-10 container mx-auto px-4 py-8 max-w-7xl">
-        {/* Logo */}
-        <div className="mb-8">
+        {/* Logo + Favorites link */}
+        <div className="mb-8 flex items-center justify-between">
           <h1 className="font-pacifico text-5xl text-white drop-shadow-lg">
             Luftschloss
           </h1>
+          <Link
+            to="/favorites"
+            className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 backdrop-blur-sm shadow-md hover:bg-white transition-colors text-foreground font-medium text-sm"
+          >
+            <Heart className="w-4 h-4 text-primary" />
+            Favoriten
+          </Link>
         </div>
 
         {/* Search Bar */}
