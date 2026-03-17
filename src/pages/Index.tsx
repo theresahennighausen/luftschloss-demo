@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { Heart } from "lucide-react";
 import CloudDecoration from "@/components/CloudDecoration";
 import SearchBar from "@/components/SearchBar";
 import ListingsGrid from "@/components/ListingsGrid";
