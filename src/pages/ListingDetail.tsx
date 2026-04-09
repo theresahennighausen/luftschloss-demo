@@ -297,7 +297,6 @@ const ListingDetail = () => {
               {similarListings.map((similarListing) => (
                 <Link key={similarListing.id} to={`/listing/${similarListing.id}`}>
                   <ListingCard
-                    id={similarListing.id}
                     title={similarListing.title}
                     location={similarListing.location}
                     imageUrl={similarListing.imageUrl}
