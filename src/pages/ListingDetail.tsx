@@ -8,6 +8,7 @@ import { toast } from "@/hooks/use-toast";
 import { Star, Users, Wifi, Dog, Droplets, Trees, Castle, Home, Heart, AlertCircle, ArrowLeft } from "lucide-react";
 import { useState } from "react";
 import ListingCard from "@/components/ListingCard";
+import FavoriteButton from "@/components/FavoriteButton";
 
 const tagLabels: Record<string, string> = {
   sauna: "Sauna",
@@ -105,7 +106,10 @@ const ListingDetail = () => {
 
             {/* Title and location */}
             <div>
-              <h1 className="text-3xl font-bold text-foreground mb-2">{listing.title}</h1>
+              <div className="flex items-start justify-between gap-4">
+                <h1 className="text-3xl font-bold text-foreground mb-2">{listing.title}</h1>
+                <FavoriteButton listingId={listing.id} />
+              </div>
               <p className="text-lg text-foreground/70 mb-3">{listing.location}</p>
               <div className="flex flex-wrap gap-2 text-sm text-foreground/80">
                 {listing.tags.slice(0, 3).map((tag) => (
