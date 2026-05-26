@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { Heart } from "lucide-react";
 import CloudDecoration from "@/components/CloudDecoration";
 import SearchBar from "@/components/SearchBar";
 import ListingsGrid from "@/components/ListingsGrid";
@@ -42,10 +44,17 @@ const Index = () => {
       
       <div className="relative z-10 container mx-auto px-4 py-8 max-w-7xl">
         {/* Header */}
-        <div className="mb-8">
+        <div className="mb-8 flex items-center justify-between">
           <h1 className="font-pacifico text-5xl text-white drop-shadow-lg">
             Luftschloss
           </h1>
+          <Link
+            to="/favorites"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/90 backdrop-blur-sm shadow-md hover:scale-105 transition-transform text-foreground font-medium"
+          >
+            <Heart className="w-4 h-4 text-primary fill-primary" />
+            Favorites
+          </Link>
         </div>
 
         {/* Search Bar */}

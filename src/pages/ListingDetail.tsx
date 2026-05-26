@@ -8,6 +8,7 @@ import { toast } from "@/hooks/use-toast";
 import { Star, Users, Wifi, Dog, Droplets, Trees, Castle, Home, Heart, AlertCircle, ArrowLeft } from "lucide-react";
 import { useState } from "react";
 import ListingCard from "@/components/ListingCard";
+import FavoriteButton from "@/components/FavoriteButton";
 
 
 const tagLabels: Record<string, string> = {
@@ -96,12 +97,15 @@ const ListingDetail = () => {
           {/* Left column - Main content */}
           <div className="lg:col-span-2 space-y-6">
             {/* Image */}
-            <div className="rounded-2xl overflow-hidden shadow-lg">
+            <div className="relative rounded-2xl overflow-hidden shadow-lg">
               <img
                 src={listing.imageUrl}
                 alt={listing.title}
                 className="w-full h-[400px] object-cover"
               />
+              <div className="absolute top-4 right-4">
+                <FavoriteButton listingId={listing.id} variant="detail" />
+              </div>
             </div>
 
             {/* Title and location */}
